@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="mainApp">
+      <div class="topBar">
+        <div class="titleBar">
+          <button id="showHideMenus" class="toggleButtons"></button>
+          <img src="./assets/icons/icons8-pull-down-16.png" />
+          <div class="title">My App Top Bar</div>
+        </div>
+        <div class="titleBarBtns">
+          <button id="minimizeBtn" class="topBtn minimizeBtn" title="Minimize"></button>
+          <button id="maximizeBtn" class="topBtn maximizeBtn" title="Maximize"></button>
+          <button id="closeBtn" class="topBtn closeBtn" title="Close"></button>
+        </div>
+      </div>
+      <div class="contentArea">
+        <div id="mySidebar" class="leftMenu"></div>
+        <div class="contentPages"></div>
+      </div>
+    </div>
+    <script src="./js/renderer.js"></script>
+  </body>
+</html>
