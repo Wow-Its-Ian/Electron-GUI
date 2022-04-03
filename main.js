@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, globalShortcut } = require('electron');
 const path = require('path');
 
 // 'darwin' for Mac behaves differently
@@ -49,6 +49,11 @@ const createWindow = () => {
   // Close App
   ipcMain.on('app:close', () => {
     mainWindow.close();
+  });
+
+  // Hotkeys
+  globalShortcut.register('CommandOrControl+R', () => {
+    mainWindow.reload();
   });
 };
 

@@ -1,0 +1,213 @@
+@import 'config';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 10pt;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $light-color;
+  background-color: $dark-color;
+}
+
+.mainApp {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.mainApp > .topBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  border-bottom: 3px solid $border-color;
+  background-color: $background-dark;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.topBar > .titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  -webkit-app-region: drag;
+}
+
+.titleBar > .toggleButton {
+  width: 45px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-image: url('../../assets/icons/icons8-pull-down-16.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.titleBar > .toggleButton:hover {
+  background-color: $hover-color;
+}
+
+.titleBar > .toggleButton:active {
+  background-color: $active-color;
+}
+
+.tittleBar > img {
+  margin-left: 10px;
+}
+
+.tittleBar > .title {
+  margin-left: 10px;
+  width: 100%;
+  line-height: 30px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+
+.topBar > .titleBarBtns {
+  display: flex;
+  flex-direction: row;
+  width: 120px;
+  height: 40px;
+}
+
+.titleBarBtns > .topBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.titleBarBtns > .topBtn:hover {
+  background-color: $hover-color;
+}
+
+.titleBarBtns > .topBtn:active {
+  background-color: $active-color;
+}
+
+.titleBarBtns > .minimizeBtn {
+  filter: invert(100%);
+  background-image: url('../../assets/icons/icons8-subtract-16.png');
+}
+
+.titleBarBtns > .maximizeBtn {
+  filter: invert(100%);
+  background-image: url('../../assets/icons/icons8-maximize-16.png');
+}
+
+.titleBarBtns > .restoreBtn {
+  filter: invert(100%);
+  background-image: url('../../assets/icons/icons8-minimize-16.png');
+}
+
+.titleBarBtns > .closeBtn {
+  filter: invert(100%);
+  background-image: url('../../assets/icons/icons8-close-16.png');
+}
+
+.titleBar > img {
+  filter: invert(100%);
+}
+
+.mainApp > .contentArea {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.contentArea > .leftMenu {
+  width: 280px;
+  height: 100%;
+  background-color: $hover-color;
+  transition: 0.4s;
+}
+
+.contentArea > .contentPages {
+  width: 100%;
+  height: 100%;
+
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.showcase {
+  @include set-background($primary-color);
+  height: 600px;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    li {
+      padding: 15px;
+    }
+
+    a {
+      color: set-text-color($primary-color);
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+
+  // a {
+  //   color: #fff;
+  // }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    img {
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+
+    // p {
+    //   margin: 20px 0;
+    // }
+  }
+}
+
+@import 'utilities';
+@import 'buttons';
+@import 'mobile';

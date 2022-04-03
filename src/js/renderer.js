@@ -5,6 +5,10 @@ const minimizeBtn = document.querySelector('#minimizeBtn');
 const maximizeBtn = document.querySelector('#maximizeBtn');
 const closeBtn = document.querySelector('#closeBtn');
 
+// Sidebar
+const showHideMenus = document.querySelector('#showHideMenus');
+const mySidebar = document.querySelector('#mySidebar');
+
 function changeMaxResBtn(isMaximizedApp) {
   if (isMaximizedApp) {
     maximizeBtn.setAttribute('title', 'Restore');
@@ -39,4 +43,17 @@ ipcRenderer.on('isMaximized', () => {
 // Change Icon on Restore
 ipcRenderer.on('isRestored', () => {
   changeMaxResBtn(false);
+});
+
+let isLeftMenuActive = true;
+
+// Toggle menu
+showHideMenus.addEventListener('click', () => {
+  if (isLeftMenuActive) {
+    mySidebar.setAttribute('width', '0px');
+    isLeftMenuActive = false;
+  } else {
+    mySidebar.setAttribute('width', '280px');
+    isLeftMenuActive = true;
+  }
 });
